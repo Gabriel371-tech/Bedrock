@@ -1,5 +1,7 @@
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
+
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -24,9 +26,9 @@ export default function Navbar() {
           <a href="#" className="text-white font-semibold hover:text-blue-600">
             Sobre Nós
           </a>
-          <button className="px-6 py-1 rounded-3xl bg-white text-black font-semibold hover:bg-blue-700 transition">
+          <Link  to="/login" className="px-6 py-1 rounded-3xl bg-white text-black font-semibold hover:bg-blue-700 transition">
             Entrar
-          </button>
+          </Link>
         </div>
 
         {/* Botão menu mobile */}
