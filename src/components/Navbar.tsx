@@ -8,7 +8,7 @@ export default function Navbar() {
     <nav className="w-full bg-[#18396F] fixed top-0 left-0 z-50">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
-        <div className="text-2xl font-bold text-white">MinhaLogo</div>
+        <div className="text-2xl font-bold text-white">Logo</div>
 
         {/* Links  */}
         <div className="hidden md:flex items-center space-x-8">
