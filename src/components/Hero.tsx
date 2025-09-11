@@ -6,7 +6,7 @@ const Hero: React.FC = () => {
     <section className="w-full min-h-screen flex flex-col md:flex-row items-center justify-between px-8 md:px-16 lg:px-24 py-12 bg-[#18396F]">
       {/* Lado Esquerdo - Textos */}
       <div className="flex-1 text-center md:text-left">
-        <h1 className="font-poppins font-bold text-3xl md:text-4xl lg:text-5xl text-white leading-snug">
+        <h1 className="font-poppins font-semibold text-3xl md:text-4xl lg:text-5xl text-white leading-snug">
           Sistema com controle e <br />
           eficiência para <br />
           instituição acadêmica

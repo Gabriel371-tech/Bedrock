@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
+import SobreSistema from "./components/sections/SobreSistema";
 import './index.css';
 import Login from "./pages/Login";
 
@@ -15,11 +16,12 @@ function App() {
             <>
               <Navbar />
               <Hero />
+              <SobreSistema />
             </>
           }
         />
 
-        {/* P gina de login */}
+        {/*Rota da P gina de login */}
         <Route path="/login" element={<Login />} />
       </Routes>
     </BrowserRouter>
