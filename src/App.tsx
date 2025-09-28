@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
+import Icones from "./components/sections/Icones";
 import SobreSistema from "./components/sections/SobreSistema";
 import './index.css';
 import Login from "./pages/Login";
@@ -17,6 +18,7 @@ function App() {
               <Navbar />
               <Hero />
               <SobreSistema />
+              <Icones />
             </>
           }
         />
