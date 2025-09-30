@@ -3,6 +3,7 @@ import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
 import Icones from "./components/sections/Icones";
 import SobreSistema from "./components/sections/SobreSistema";
+import Escalavel from "./components/sections/Escalavel";
 import './index.css';
 import Login from "./pages/Login";
 
@@ -11,7 +12,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* Path = / ‚ o caminho da raiz, o main vai iniciar os components no element */}
+        {/* Path = / ï¿½ o caminho da raiz, o main vai iniciar os components no element */}
         <Route  path="/"
           element={
             <>
@@ -19,11 +20,12 @@ function App() {
               <Hero />
               <SobreSistema />
               <Icones />
+              <Escalavel/>
             </>
           }
         />
 
-        {/*Rota da P gina de login */}
+        {/*Rota da Pï¿½gina de login */}
         <Route path="/login" element={<Login />} />
       </Routes>
     </BrowserRouter>
