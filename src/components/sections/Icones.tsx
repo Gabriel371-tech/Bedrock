@@ -6,7 +6,7 @@ export default function Icones() {
 
         <section className='w-full min-h-screen bg-gradient-to-t from-white to-blue-200 py-12 px-4 flex flex-col items-center justify-center'>
             {/* TITULO */}
-            <h2 className="text-black text-center 2xl:text-5xl text-2xl font-semibold">Um Sistema feito para os <br />seguintes segmentos</h2>
+            <h2 className="text-black text-center 2xl:text-5xl text-2xl font-semibold mb-8">Um Sistema feito para os <br />seguintes segmentos</h2>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 gap-y-8 gap-x-[180px]">
                 {/* ICONE 1*/}
                 <div className="flex flex-col items-center">
