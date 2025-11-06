@@ -4,6 +4,8 @@ import Navbar from "./components/Navbar";
 import Icones from "./components/sections/Icones";
 import SobreSistema from "./components/sections/SobreSistema";
 import Escalavel from "./components/sections/Escalavel";
+import Agenda from "./components/sections/Agenda";
+import Hero2 from "./components/sections/Hero2";
 import './index.css';
 import Login from "./pages/Login";
 
@@ -21,6 +23,8 @@ function App() {
               <SobreSistema />
               <Icones />
               <Escalavel/>
+              <Hero2 />
+              <Agenda />
             </>
           }
         />
