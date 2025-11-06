@@ -9,7 +9,7 @@ import Hero2 from "./components/sections/Hero2";
 import './index.css';
 import Login from "./pages/Login";
 import Footer from "./components/Footer"; 
-
+import ContainerCollapse from "./components/sections/ContainerCollapse";
 function App() {
 
   return (
@@ -26,6 +26,7 @@ function App() {
               <Escalavel/>
               <Hero2 />
               <Agenda />
+              <ContainerCollapse />
               <Footer />
             </>
           }
