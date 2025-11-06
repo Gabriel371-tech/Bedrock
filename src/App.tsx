@@ -8,6 +8,7 @@ import Agenda from "./components/sections/Agenda";
 import Hero2 from "./components/sections/Hero2";
 import './index.css';
 import Login from "./pages/Login";
+import Footer from "./components/Footer"; 
 
 function App() {
 
@@ -25,6 +26,7 @@ function App() {
               <Escalavel/>
               <Hero2 />
               <Agenda />
+              <Footer />
             </>
           }
         />
