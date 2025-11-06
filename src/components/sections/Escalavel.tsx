@@ -8,7 +8,7 @@ export default function Escalavel () {
         <section className="w-full min-h-screen bg-zinc-50 py-12 px-4 flex flex-col items-center justify-center">
             <h1 className="text-black text-center font-poppins font-semibold text-4xl">Totalmente</h1>
             <h2 className="text-[#5975FF] font-poppins text-center text-6xl mb-6 underline">Escalável!</h2>
-            <h3 className="text-black text-center text-4xl font-poppins font-light mt-4 mb-8">Desenvolvido para suportar qualquer tipo de infraestrutura!</h3>
+            <h3 className="font-bold text-center text-4xl font-poppins mt-4 mb-8">Desenvolvido para suportar qualquer tipo de infraestrutura!</h3>
             <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 gap-y-8 gap-x-[180px]">
                 <div className="flex flex-col items-center">
                     <img src={usergroup} alt="universidade" />
