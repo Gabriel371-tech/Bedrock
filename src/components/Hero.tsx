@@ -24,12 +24,12 @@ const Hero: React.FC = () => {
         </button>
       </div>
 
-      {/* Lado Direito - Imagem */}
-      <div className="flex-1 mt-10 md:mt-0 flex justify-center">
+       {/* Lado Direito - Imagem */}
+      <div className="flex-1 mt-6 md:mt-0 flex justify-center">
         <img
-        src={estudanteFlutuando} 
-        alt="Gestão acadêmica animada"
-        className="w-72 2xl:w-100 md:w-80 lg:w-96 object-contain"
+          src={estudanteFlutuando} 
+          alt="Gestão acadêmica animada"
+          className="w-70 sm:w-86 md:w-[400px] lg:w-[500px] object-contain"
         />
       </div>
     </section>
