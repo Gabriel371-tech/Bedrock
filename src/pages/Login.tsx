@@ -1,11 +1,17 @@
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FaFacebook } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
+import fundo from '../assets/degrade-fundo-azul.jpg';
+import { Link } from "react-router-dom";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
 
+  useEffect(() => {
+    document.title = "Entrar â€” Bedrock";
+  }, []);
+  
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Email:", email, "Senha:", senha);
@@ -14,23 +20,26 @@ export default function Login() {
 
   const handleGoogleLogin = () => {
     console.log("Login com Google");
-    // Aqui vocˆ integraria a API do Google
+    // Aqui vocï¿½ integraria a API do Google
   };
 
   const handleFacebookLogin = () => {
     console.log("Login com Facebook");
-    // Aqui vocˆ integraria a API do Facebook
+    // Aqui vocï¿½ integraria a API do Facebook
   };
 
+
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-blue-900 to-blue-600 px-4">
+    <div className="flex min-h-screen items-center justify-center px-4"
+   style={{ backgroundImage: `url(${fundo})` , backgroundSize: 'cover', backgroundPosition: 'center' }}>
       <div className="w-full max-w-md rounded-2xl bg-white p-8 shadow-lg">
-        {/* Logo ou t¡tulo */}
+        {/* Logo ou tï¿½tulo */}
         <h1 className="mb-6 text-center text-2xl font-bold text-gray-800">
-          Login
+          Entrar 
         </h1>
 
-        {/* Formul rio */}
+        {/* Formulï¿½rio */}
         <form onSubmit={handleLogin} className="space-y-4">
           {/* Email */}
           <div>
@@ -62,7 +71,7 @@ export default function Login() {
             />
           </div>
 
-          {/* BotÆo principal */}
+          {/* Botï¿½o principal */}
           <button
             type="submit"
             className="w-full rounded-lg bg-blue-600 px-4 py-2 font-semibold text-white shadow-md transition hover:bg-blue-700"
@@ -96,15 +105,15 @@ export default function Login() {
         </div>
 
         {/* Criar conta */}
-        <p className="mt-6 text-center text-sm text-gray-600">
-          NÆo tem conta?{" "}
+        <Link to="/CadastrarNomeScreen" className="mt-6 text-center text-sm text-gray-600">
+          NÃ£o tem conta?{" "}
           <a
             href="#"
             className="font-medium text-blue-600 hover:underline"
           >
             Crie uma
           </a>
-        </p>
+        </Link>
       </div>
     </div>
   );
