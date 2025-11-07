@@ -10,6 +10,8 @@ import './index.css';
 import Login from "./pages/Login";
 import Footer from "./components/Footer"; 
 import ContainerCollapse from "./components/sections/ContainerCollapse";
+import CadastrarNomeScreen from "./pages/CadastrarNomeScreen";
+
 function App() {
 
   return (
@@ -34,6 +36,7 @@ function App() {
 
         {/*Rota da P�gina de login */}
         <Route path="/login" element={<Login />} />
+        <Route path="/CadastrarNomeScreen" element={<CadastrarNomeScreen />} />
       </Routes>
     </BrowserRouter>
   
