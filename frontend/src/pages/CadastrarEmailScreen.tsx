@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { FaFacebook } from "react-icons/fa";
-import { FcGoogle } from "react-icons/fc";
 import fundo from "../assets/degrade-fundo-azul.jpg";
+import { Link } from "react-router-dom";
 
 export default function CadastrarNomeScreen() {
   const [nome, setNome] = useState("");
@@ -35,12 +34,12 @@ export default function CadastrarNomeScreen() {
             </h1>
 
             <p className="text-sm text-gray-600 text-center mt-1">
-              Digite seu nome para começar rapido e facil.
+              Digite seu email para começar rapido e facil.
             </p>
 
             <form onSubmit={handleSubmit} className="mt-4 space-y-4">
               <label className="w-full">
-                <span className="label-text text-sm text-gray-700">Digite seu nome</span>
+                <span className="label-text text-sm text-gray-700">Digite seu email</span>
                 <input
                   type="text"
                   value={nome}
@@ -52,43 +51,17 @@ export default function CadastrarNomeScreen() {
                 />
               </label>
 
-              <button
+              <Link
+                to="/CadastrarEmailScreen"
                 type="submit"
                 className="btn btn-primary btn-block btn-sm bg-[#1877F2] text-white font-bold"
                 aria-label="Avançar"
               >
                 Avançar
-              </button>
+              </Link>
             </form>
 
-           <div className="divider my-4">ou</div>
-
-            <div className="flex items-center justify-center gap-4">
-              <button
-                onClick={handleGoogle}
-                className="btn btn-outline bg-white border border-gray-200 btn-circle w-12 h-12 flex items-center justify-center"
-                aria-label="Continuar com Google"
-                title="Continuar com Google"
-              >
-                <FcGoogle size={24} />
-              </button>
-
-              <button
-                onClick={handleFacebook}
-                className="btn btn-circle w-12 h-12 flex items-center justify-center bg-[#1877F2] text-white border-0"
-                aria-label="Continuar com Facebook"
-                title="Continuar com Facebook"
-              >
-                <FaFacebook size={20} className="text-white" />
-              </button>
-            </div>
-
-            <p className="text-center text-sm text-gray-600 mt-4">
-              Ja tem conta?{" "}
-              <a href="#" className="link link-primary">
-                Entrar
-              </a>
-            </p>
+          
           </div>
         </div>
       </section>

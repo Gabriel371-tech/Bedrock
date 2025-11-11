@@ -11,6 +11,7 @@ import Login from "./pages/Login";
 import Footer from "./components/Footer"; 
 import ContainerCollapse from "./components/sections/ContainerCollapse";
 import CadastrarNomeScreen from "./pages/CadastrarNomeScreen";
+import CadastrarEmailScreen from "./pages/CadastrarEmailScreen";
 
 function App() {
 
@@ -37,6 +38,7 @@ function App() {
         {/*Rota da P�gina de login */}
         <Route path="/login" element={<Login />} />
         <Route path="/CadastrarNomeScreen" element={<CadastrarNomeScreen />} />
+        <Route path="/CadastrarEmailScreen" element={<CadastrarEmailScreen />} />
       </Routes>
     </BrowserRouter>
   
