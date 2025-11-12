@@ -1,21 +1,14 @@
-// src/screens/LoginScreen.tsx
-import React, { useState, useEffect } from "react";
+// src/screens/CadastrarSenhaScreen.tsx
+import React, { useState } from "react";
 import fundo from "../assets/degrade-fundo-azul.jpg";
-import { loginUser, } from "../../../backend/src/services/api";
-import type { LoginResponse } from "../../../backend/src/services/api";
-
+import { registerUser } from "../../../backend/src/services/api";
 import { useNavigate } from "react-router-dom";
 
-export default function LoginScreen() {
-  const [email, setEmail] = useState("");
+export default function CadastrarSenhaScreen() {
   const [senha, setSenha] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const navigate = useNavigate();
-
-  useEffect(() => {
-    document.title = "Entrar - Bedrock";
-  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -23,14 +16,17 @@ export default function LoginScreen() {
     setError(null);
 
     try {
-      const data: LoginResponse = await loginUser(email, senha);
-      alert(`Bem-vindo, ${data.user.nome}!`);
-      
-      // Aqui você pode salvar o usuário no localStorage ou context, se quiser
-      localStorage.setItem("user_email", data.user.email);
-      localStorage.setItem("user_nome", data.user.nome);
+      const nome = localStorage.getItem("user_nome") || "";
+      const email = localStorage.getItem("user_email") || "";
 
-      navigate("/"); // redireciona para a página principal
+      if (!nome || !email) throw new Error("Dados incompletos.");
+
+      const data = await registerUser(nome, email, senha);
+
+      alert(data.message); // ✅ agora TypeScript entende que message existe
+
+      // Redireciona para login
+      navigate("/login");
     } catch (err: any) {
       setError(err.message);
     } finally {
@@ -49,22 +45,10 @@ export default function LoginScreen() {
         <div className="card bg-white/95 shadow-2xl overflow-hidden">
           <div className="card-body p-6 sm:p-8">
             <h1 className="text-2xl sm:text-3xl font-semibold text-gray-900 text-center">
-              Entrar
+              Crie uma senha
             </h1>
 
             <form onSubmit={handleSubmit} className="mt-4 space-y-4">
-              <label className="w-full">
-                <span className="label-text text-sm text-gray-700">E-mail</span>
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="exemplo@email.com"
-                  className="input input-bordered w-full mt-1"
-                  required
-                />
-              </label>
-
               <label className="w-full">
                 <span className="label-text text-sm text-gray-700">Senha</span>
                 <input
@@ -84,16 +68,9 @@ export default function LoginScreen() {
                 className="btn btn-primary btn-block btn-sm bg-[#1877F2] text-white font-bold"
                 disabled={loading}
               >
-                {loading ? "Entrando..." : "Entrar"}
+                {loading ? "Enviando..." : "Concluir cadastro"}
               </button>
             </form>
-
-            <p className="text-center text-sm text-gray-600 mt-4">
-              Não tem conta?{" "}
-              <a href="/cadastrar" className="link link-primary">
-                Criar conta
-              </a>
-            </p>
           </div>
         </div>
       </section>
