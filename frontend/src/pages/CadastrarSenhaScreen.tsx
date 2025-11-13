@@ -1,7 +1,7 @@
 // src/screens/CadastrarSenhaScreen.tsx
 import React, { useState } from "react";
 import fundo from "../assets/degrade-fundo-azul.jpg";
-import { registerUser } from "../../../backend/src/services/api";
+import { registerUser } from "../services/api";
 import { useNavigate } from "react-router-dom";
 
 export default function CadastrarSenhaScreen() {

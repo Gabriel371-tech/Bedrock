@@ -1,10 +1,11 @@
 // src/screens/LoginScreen.tsx
 import React, { useState, useEffect } from "react";
 import fundo from "../assets/degrade-fundo-azul.jpg";
-import { loginUser, } from "../../../backend/src/services/api";
-import type { LoginResponse } from "../../../backend/src/services/api";
+import { loginUser, } from "../services/api";
+import type { LoginResponse } from "../services/api";
 
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function LoginScreen() {
   const [email, setEmail] = useState("");
@@ -90,9 +91,9 @@ export default function LoginScreen() {
 
             <p className="text-center text-sm text-gray-600 mt-4">
               Não tem conta?{" "}
-              <a href="/cadastrar" className="link link-primary">
+              <Link to="/CadastrarNomeScreen" className="link link-primary">
                 Criar conta
-              </a>
+              </Link>
             </p>
           </div>
         </div>
