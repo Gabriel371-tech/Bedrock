@@ -49,21 +49,11 @@ export default function CadastrarEmailScreen() {
             </p>
 
             <form onSubmit={handleSubmit} className="mt-4 space-y-4">
-              <label className="w-full">
-                <span className="label-text text-sm text-gray-700">
-                  Endereço de e-mail
-                </span>
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="exemplo@email.com"
-                  className="input input-bordered w-full mt-1"
-                  required
-                  aria-label="Endereço de e-mail"
-                />
+              <label className="floating-label">
+                <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Digite seu email" className="input input-md" required/>
               </label>
 
+          
               <button
                 type="submit"
                 className="btn btn-primary btn-block btn-sm bg-[#1877F2] text-white font-bold"

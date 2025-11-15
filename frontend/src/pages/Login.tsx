@@ -31,7 +31,7 @@ export default function LoginScreen() {
       localStorage.setItem("user_email", data.user.email);
       localStorage.setItem("user_nome", data.user.nome);
 
-      navigate("/"); // redireciona para a página principal
+      navigate("/dashboard"); // redireciona para a página principal
     } catch (err: any) {
       setError(err.message);
     } finally {

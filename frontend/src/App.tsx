@@ -13,6 +13,7 @@ import ContainerCollapse from "./components/sections/ContainerCollapse";
 import CadastrarNomeScreen from "./pages/CadastrarNomeScreen";
 import CadastrarEmailScreen from "./pages/CadastrarEmailScreen";
 import CadastrarSenhaScreen from "./pages/CadastrarSenhaScreen";
+import DashBoardScreen from "./pages/DashBoardScreen";
 
 function App() {
   return (
@@ -43,6 +44,7 @@ function App() {
         <Route path="/CadastrarNomeScreen" element={<CadastrarNomeScreen />} />
         <Route path="/CadastrarEmailScreen" element={<CadastrarEmailScreen />} />
         <Route path="/CadastrarSenhaScreen" element={<CadastrarSenhaScreen />} />
+        <Route path="/dashboard" element={<DashBoardScreen />} />
       </Routes>
     </BrowserRouter>
   );

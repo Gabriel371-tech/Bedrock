@@ -49,14 +49,13 @@ export default function CadastrarSenhaScreen() {
             </h1>
 
             <form onSubmit={handleSubmit} className="mt-4 space-y-4">
-              <label className="w-full">
-                <span className="label-text text-sm text-gray-700">Senha</span>
+              <label className="floating-label">
                 <input
                   type="password"
                   value={senha}
                   onChange={(e) => setSenha(e.target.value)}
-                  placeholder="********"
-                  className="input input-bordered w-full mt-1"
+                  placeholder="Digite sua senha"
+                  className="input input-md"
                   required
                 />
               </label>

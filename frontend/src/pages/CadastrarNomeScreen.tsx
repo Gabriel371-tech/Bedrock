@@ -59,20 +59,9 @@ export default function CadastrarNomeScreen() {
             </p>
 
             <form onSubmit={handleSubmit} className="mt-4 space-y-4">
-              <label className="w-full">
-                <span className="label-text text-sm text-gray-700">
-                  Digite seu nome
-                </span>
-                <input
-                  type="text"
-                  value={nome}
-                  onChange={(e) => setNome(e.target.value)}
-                  placeholder="Ex: Gabriel Leonardo"
-                  className="input input-bordered w-full mt-1"
-                  required
-                  aria-label="Nome completo"
-                />
-              </label>
+             <label className="floating-label">
+              <input type="text" placeholder="Digite seu nome"  value={nome} onChange={(e) => setNome(e.target.value)} className="input input-md"/>
+            </label>
 
               <button
                 type="submit"
