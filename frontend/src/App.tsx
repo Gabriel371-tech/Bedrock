@@ -14,6 +14,12 @@ import CadastrarNomeScreen from "./pages/CadastrarNomeScreen";
 import CadastrarEmailScreen from "./pages/CadastrarEmailScreen";
 import CadastrarSenhaScreen from "./pages/CadastrarSenhaScreen";
 import DashBoardScreen from "./pages/DashBoardScreen";
+import ProjetosScreen from "./pages/ProjetosScreen";
+import DisciplinasScreen from "./pages/DisciplinasScreen";
+import ChatScreen from "./pages/ChatScreen";
+import BibliotecaScreen from "./pages/BibliotecaScreen";
+import EstatisticaScreen from "./pages/EstatisticaScreen";
+import SettingsScreen from "./pages/SettingsScreen";
 
 function App() {
   return (
@@ -45,6 +51,12 @@ function App() {
         <Route path="/CadastrarEmailScreen" element={<CadastrarEmailScreen />} />
         <Route path="/CadastrarSenhaScreen" element={<CadastrarSenhaScreen />} />
         <Route path="/dashboard" element={<DashBoardScreen />} />
+        <Route path="/projetos" element={<ProjetosScreen />} />
+        <Route path="/disciplinas" element={<DisciplinasScreen />} />
+        <Route path="/chat" element={<ChatScreen />} />
+        <Route path="/biblioteca" element={<BibliotecaScreen />} />
+        <Route path="/estatistica" element={<EstatisticaScreen />} />
+        <Route path="/settings" element={<SettingsScreen />} />
       </Routes>
     </BrowserRouter>
   );
