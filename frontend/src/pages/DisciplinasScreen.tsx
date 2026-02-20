@@ -81,35 +81,55 @@ export default function DisciplinesScreen() {
       </SidebarSimple>
 
       <div className="flex-grow p-8 overflow-y-auto bg-base-100">
-        <h1 className="text-3xl font-semibold text-base-content mb-8">Disciplinas</h1>
+        <div className="flex justify-between items-center mb-8">
+          <h1 className="text-4xl font-bold text-base-content">Disciplinas</h1>
+          <button className="btn btn-primary btn-lg" onClick={handleAddDiscipline}>
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4"></path>
+            </svg>
+            Adicionar Disciplina
+          </button>
+        </div>
         
         {/* Search Bar */}
         <div className="mb-8">
           <input
             type="text"
             placeholder="Buscar disciplinas..."
-            className="input input-bordered w-full max-w-xs"
+            className="input input-bordered input-lg w-full max-w-md"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
         </div>
         
-        {/* Add Button */}
-        <div className="mb-8">
-          <button className="btn btn-primary" onClick={handleAddDiscipline}>Adicionar Disciplina</button>
-        </div>
-        
         {/* Disciplines Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {filteredDisciplines.map(discipline => (
-            <div key={discipline.id} className="card bg-base-100 shadow-xl">
+            <div key={discipline.id} className="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow duration-300">
+              <figure className="px-6 pt-6">
+                <img
+                  src={`https://picsum.photos/200/150?random=${discipline.id}`}
+                  alt={`Imagem da disciplina ${discipline.name}`}
+                  className="rounded-xl mask mask-squircle"
+                />
+              </figure>
               <div className="card-body">
                 <h2 className="card-title text-base-content">{discipline.name}</h2>
                 <p className="text-base-content opacity-70">Código: {discipline.code}</p>
-                <p className="text-base-content">Professor: {discipline.professor}</p>
-                <div className="card-actions justify-end">
-                  <button className="btn btn-sm btn-warning" onClick={() => handleEditDiscipline(discipline)}>Editar</button>
-                  <button className="btn btn-sm btn-error" onClick={() => handleDeleteDiscipline(discipline.id)}>Excluir</button>
+                <p className="text-base-content opacity-70">Professor: {discipline.professor}</p>
+                <div className="card-actions justify-end mt-4">
+                  <button className="btn btn-outline btn-sm" onClick={() => handleEditDiscipline(discipline)}>
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
+                    </svg>
+                    Editar
+                  </button>
+                  <button className="btn btn-outline btn-error btn-sm" onClick={() => handleDeleteDiscipline(discipline.id)}>
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
+                    </svg>
+                    Excluir
+                  </button>
                 </div>
               </div>
             </div>
